@@ -76,13 +76,12 @@ stream
     }
 
     let combinations = tokenizeArray(finalArr);
-    console.log(combinations.length);
-    const csvString = combinations.map(row => row.join(',')).join('\n')
-    fs.writeFile('output.csv', csvString, (err) => {
-        if (err) {
-          console.error('Error writing to file:', err);
-        } else {
-          console.log('CSV file successfully created');
-        }
-      });
+    const csvString = combinations.map((row) => row.join(",")).join("\n");
+    fs.writeFile("output.csv", csvString, (err) => {
+      if (err) {
+        console.error("Error writing to file:", err);
+      } else {
+        console.log("CSV file successfully created");
+      }
+    });
   });

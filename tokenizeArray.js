@@ -12,11 +12,14 @@ const tokenizeArray = (inputArr) => {
       const currentKeys = Object.keys(currentInnerObject);
       for (let currentKey of currentKeys) {
         combination.push(currentKey);
-        if (thisKey < 1) {
+        if (thisKey < 2) {
           combination.push(currentInnerObject[currentKey]);
         }
-        recursiveFunction(inputArr, Number(thisKey) + 1, keys, combination);
+        recursiveFunction(inputArr, thisKey + 1, keys, combination);
         combination.pop();
+        if (thisKey < 2) {
+          combination.pop();
+        }
       }
     }
   };
